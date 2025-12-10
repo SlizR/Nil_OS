@@ -12,7 +12,7 @@ Nil OS provides an extensible architecture suitable for embedded systems, experi
 3. **UI/GUI, although support for low-end hardware is the same**
 4. **OS history is not just "done and done"**
 5. **Saved files are available on disk from where they were downloaded (I inserted the OS on a flash drive into my computer, made edits, and retrieved everything from the flash drive, but nothing changed or saved on the PC).**
-6. **System: I inserted a flash drive with the operating system (Nil OS) into the computer, made changes, and all the data was saved to the flash drive, and nothing changed or was saved on the PC.**
+6. **System: I inserted a flash drive with the operating system (Nil OS) into the computer, made changes, and all the data was saved to the flash drive, and nothing changed or was saved on the PC. (BeTop Security Service Feature)**
 7. **Security updates with every update thanks to Secured by BeTop (BTop Security)**
 
 ---
