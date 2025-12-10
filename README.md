@@ -23,12 +23,13 @@ Nil OS provides an extensible architecture suitable for embedded systems, experi
 
 * Built on Micro Core Linux technologies.
 * Small footprint for fast boot and low memory consumption.
-* Fully modular structure with optional `.tcz` extensions.
+* Fully modular structure with optional `.gz` (core.gz update) extensions.
 
 ### Custom Boot Experience
 
 * Integrated animated ASCII boot screen.
 * User hostname/name overlay.
+* Terminal name>>> or root>>>
 * Millisecond‑accurate boot time display.
 * Optional auto‑saving scripts and OTA update system.
 
@@ -41,7 +42,7 @@ Nil OS provides an extensible architecture suitable for embedded systems, experi
 ### Extendable Userland
 
 * Custom commands located in `/usr/local/bin` (e.g., `info`, `help`, `update`, `updateinfo`, `fortune`).
-* Editable through the persistent TCE directory.
+* Edited via the permanently stored system directory core.gz.
 * Simple Bash/BusyBox environment intended for experimentation.
 
 ---
