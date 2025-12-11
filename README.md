@@ -1,6 +1,6 @@
-# Nil OS - lightweight OS | Secured by BeTop
+# Nil OS - lightweight OS | Secured by EVADE
 
-Nil OS is a lightweight, modular, and highly customizable operating system based on Micro Core Linux.
+Nil OS is a lightweight, modular, and highly customizable operating system based on [**Root Core**](https://github.com/SlizR/root_core) Linux.
 It is designed for minimal resource usage, fast boot times, and maximum user control over both the runtime environment and the persistent storage model.
 
 Nil OS provides an extensible architecture suitable for embedded systems, experimental Linux environments, custom live distributions, and minimalistic desktop setups.
@@ -12,8 +12,13 @@ Nil OS provides an extensible architecture suitable for embedded systems, experi
 3. **UI/GUI, although support for low-end hardware is the same**
 4. **OS history is not just "done and done"**
 5. **Saved files are available on disk from where they were downloaded (I inserted the OS on a flash drive into my computer, made edits, and retrieved everything from the flash drive, but nothing changed or saved on the PC).**
-6. **System: I inserted a flash drive with the operating system (Nil OS) into the computer, made changes, and all the data was saved to the flash drive, and nothing changed or was saved on the PC. (BeTop Security Service Feature)**
-7. **Security updates with every update thanks to Secured by BeTop (BTop Security)**
+6. **System: I inserted a flash drive with the operating system (Nil OS) into the computer, made changes, and all the data was saved to the flash drive, and nothing changed or was saved on the PC. (EVADE Security Service Feature)**
+7. **Security updates with every update thanks to Secured by BeTop (EVADE Security)**
+
+### EVADE Security
+
+- [**EVADE**](https://github.com/SlizR/EVADE) Security - A system for protecting multiple operating systems for **writing to local computers** **(Full OS Isolation on a flash drive)** abbreviation:
+- **E**xternal **V**ault **A**ccess **D**efense **E**ngine - **EVADE**
 
 ---
 
