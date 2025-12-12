@@ -5,7 +5,7 @@
 º  /) LINUX (\          A Busybox & Fltk minimal desktop.              º
 º   (/-_--_-\)              github.com/SlizR/Nil_OS                    º
 º                                                                      º
-º                                 Version 6.4                          º
+º                                 Version 6.5                          º
 ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍŒ
 
 Welcome to Nil OS! This is a minimal distribution for enthusiasts
