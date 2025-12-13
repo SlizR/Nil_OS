@@ -1,6 +1,7 @@
 # Nil OS - lightweight OS | Secured by EVADE
 
-Nil OS is a lightweight, modular, and highly customizable operating system based on [**Root Core**](https://github.com/SlizR/root_core) Linux.
+Nil OS is a lightweight, modular, and highly customizable operating system based on [**Root Core**](https://github.com/SlizR/root_core) Linux. 
+> Note! Root Core does not use a Unix-like system! It uses a custom launch system similar to Linux's Timmy Core. Nil OS uses Root Core, but with a modified structure: the underlying system is .sb modules rather than .gz (although Root Core has been modified slightly to accommodate the .img > initrfs.img system).
 It is designed for minimal resource usage, fast boot times, and maximum user control over both the runtime environment and the persistent storage model.
 
 Nil OS provides an extensible architecture suitable for embedded systems, experimental Linux environments, custom live distributions, and minimalistic desktop setups.
@@ -28,13 +29,13 @@ Nil OS provides an extensible architecture suitable for embedded systems, experi
 
 * Built on Micro Core Linux technologies.
 * Small footprint for fast boot and low memory consumption.
-* Fully modular structure with optional `.gz` (core.gz update) extensions.
+* Fully modular structure with optional `.img` (initrfs.img update) extensions.
 
 ### Custom Boot Experience
 
 * Integrated animated ASCII boot screen.
 * User hostname/name overlay.
-* Terminal name>>> or root>>>
+* Terminal: name>>> (For user) or $> (For root)
 * Millisecond‑accurate boot time display.
 * Optional auto‑saving scripts and OTA update system.
 
@@ -42,64 +43,71 @@ Nil OS provides an extensible architecture suitable for embedded systems, experi
 
 * Automated file saving via `filetool.sh -b`.
 * Optional background autosave scripts (e.g., every 2 minutes).
-* Full control of core filesystem through custom `core.gz`.
+* Full control of core filesystem through custom `initrfs.img`.
 
 ### Extendable Userland
 
 * Custom commands located in `/usr/local/bin` (e.g., `info`, `help`, `update`, `updateinfo`, `fortune`).
-* Edited via the permanently stored system directory core.gz.
-* Simple Bash/BusyBox environment intended for experimentation.
+* Edited via the permanently stored system directory initrfs.img.
+* Simple Bash/Fluxbox environment intended for experimentation.
 
 ---
 
 ## Directory Structure
 
 ```
-NilOS/
+nil/
 ├── boot/
-│   ├── core.gz        # System base image
-│   ├── vmlinuz        # Kernel
-|   ├── ...            # ...
-│   └── isolinux/      # ISO bootloader
-├── cde/
-│   ├── onboot.lst     # Extensions loaded on boot
-│   ├── optional/      # Additional .tcz packages
-│   ├── copy2fs.lst    # Files copied into RAM
-│   └── xbase.lst      # X11/desktop components
-└── opt/
-    ├── welcome.sh     # Animated boot splash
-    ├── bootlocal.sh   # Local startup script
-    ├── ota.sh         # OTA update logic
-    ├── autosave.sh    # Optional autosave daemon
-    └── shutdown.sh    # Custom shutdown logic
+│   ├── initrfs.img           # Initramfs (Compressed CPIO archive)
+│   ├── vmlinuz               # Linux kernel
+│   ├── isolinux.bin          # ISOLINUX bootloader (for BIOS)
+│   ├── isolinux.cfg          # ISOLINUX bootloader menu configuration
+│   ├── vesamenu.c32          # Menu module (for graphical mode)
+│├── EFI/
+│   │   └── Boot/
+│   │        ├── bootx64.efi   # EFI bootloader (for 64-bit UEFI)
+│   │        └── syslinux.cfg  # EFI/SYSLINUX bootloader configuration
+│   ├── ... (c32, mbr, extlinux) # Additional boot components
+│   └── bootinst.sh         # Script for writing to USB/HDD
+│
+├── changes/
+│└── (empty)                # Changes to the running system are saved here
+│
+└── modules/
+├── 01-core.sb            # The core of the system (SquashFS), including /etc, /bin, /lib
+├── 01-firmware.sb        # Firmware for hardware (Wi-Fi, GPU, etc.)
+├── 02-xorg.sb            # X.Org graphics server
+├── 03-desktop.sb         # Desktop (WM, panel, basic Utilities)
+├── 04-apps.sb            # Additional Applications
+└── 05-chromium.sb        # Large Applications (e.g., Browser)
 ```
 
 ---
 
 ## Requirements
 
-* x32-x64/x86 architecture
-* Minimum computer specifications:
+* **x64/x86** architecture
+* ***Minimum** computer specifications:*
 
 ### Processor
 
-Minimum processor: i486 or i586 compatible
-Recommended processor: Any Pentium, Celeron, Athlon, VIA C3, Geode, and other processors
+Minimum processor: **Intel Pentium (or equivalent), 32-bit (i686) or 64-bit (x86_64)**
+Recommended processor: **Any modern processor (1 GHz+)**
 
 ### Video Card
 
-Minimum video card: CPU-based or any VESA 2.0-compliant video card (if you can compress the image to any card)
-Recommended video card: Any VESA 2.0-compliant video card or higher
+Minimum video card: **VESA-compatible graphics card**
+Recommended video card: **A graphics card with 3D acceleration support (for modern browsing)**
 
 ### RAM
 
-Minimum RAM to run: 64 MB
-Recommended RAM to run: 128 MB or higher
+Minimum RAM to run: **512 MB**
+Recommended RAM to run: **1 GB or higher**
 
 ### Disk
 
-Minimum storage to run: 32 MB (ISO: ~25 MB, with an additional 7 MB for system data)
-Recommended amount Storage space for launch: No limitation (Above 32 MB or even 25 MB makes sense only for saving data)
+Minimum storage to run: **512 MB (ISO: ~440,2 MB, with an additional 71,8 MB for system data)**
+Recommended amount Storage space for launch: **No limitation (Above 512 MB makes sense only for saving data)**
 
 ---
 
