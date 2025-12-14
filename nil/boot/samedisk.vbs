@@ -1,14 +1,9 @@
-#        ____                _           _   _           
-#       / ___|_ __ ___  __ _| |_ ___  __| | | |__  _   _ 
-#      | |   | '__/ _ \/ _` | __/ _ \/ _` | | '_ \| | | |
-#      | |___| | |  __/ (_| | ||  __/ (_| | | |_) | |_| |
-#       \____|_|  \___|\__,_|\__\___|\__,_| |_.__/ \__, |
-#       ____  _ _         _____                    |___/ 
-#      / ___|| (_)____   / ___ \                         
-#      \___ \| | |_  /  / | _ \ \                        
-#       ___) | | |/ /  |  |   /  |                       
-#      |____/|_|_/___|  \ |_|_\ /                        
-#                        \_____/ 
+' This script compares two given parameters (just first letter, so you can pass in full paths as well)
+' and returns exit code 99 if both disk drives are on the same physical drive
+' Run it as: wscript.exe samedisk.vbs c:\ d:\
+' Author: Tomas M <http://www.linux-live.org/>
+' Inspired by: http://www.activexperts.com/activmonitor/windowsmanagement/adminscripts/disk/drives/
+' -------------------------------------------
 
 drive1 = ""
 drive2 = ""

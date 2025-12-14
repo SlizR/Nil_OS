@@ -2,17 +2,14 @@
 #
 #     This script will setup booting from disk (USB or harddrive)
 #
-#        ____                _           _   _           
-#       / ___|_ __ ___  __ _| |_ ___  __| | | |__  _   _ 
-#      | |   | '__/ _ \/ _` | __/ _ \/ _` | | '_ \| | | |
-#      | |___| | |  __/ (_| | ||  __/ (_| | | |_) | |_| |
-#       \____|_|  \___|\__,_|\__\___|\__,_| |_.__/ \__, |
-#       ____  _ _         _____                    |___/ 
-#      / ___|| (_)____   / ___ \                         
-#      \___ \| | |_  /  / | _ \ \                        
-#       ___) | | |/ /  |  |   /  |                       
-#      |____/|_|_/___|  \ |_|_\ /                        
-#                        \_____/   
+#     If you see this file in a text editor instead of getting it executed,
+#     then it is missing executable permissions (chmod). You can try to set
+#     exec permissions for this file by using:  chmod a+x bootinst.sh
+#     Alternatively, you may try to run bootinst.bat file instead
+#
+#     Scrolling down will reveal the actual code of this script.
+#
+
 
 
 
