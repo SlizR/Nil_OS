@@ -2,54 +2,52 @@ name: Code Quality
 
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
-
-permissions:
-  contents: write
-  pull-requests: write
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   quality-check:
     runs-on: ubuntu-latest
-    continue-on-error: true
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install tools
-        run: |
+      - run: |
           sudo apt-get update
           sudo apt-get install -y shellcheck
 
-      - name: Shell analysis
-        run: |
-          find . -type f -name "*.sh" -exec shellcheck {} + || true
+      - run: |
+          mkdir -p .github/workflows
+          echo "CODE QUALITY REPORT" > .github/workflows/log.txt
+          echo "===================" >> .github/workflows/log.txt
+          echo "" >> .github/workflows/log.txt
 
-      - name: VBScript analysis
-        run: |
-          find . -type f -name "*.vbs" -exec grep -L "Option Explicit" {} + || true
+          echo "SHELLCHECK RESULTS:" >> .github/workflows/log.txt
+          echo "-------------------" >> .github/workflows/log.txt
+          find nil -type f -name "*.sh" -exec shellcheck {} + >> .github/workflows/log.txt 2>&1 || true
+          echo "" >> .github/workflows/log.txt
 
-      - name: Generate report
-        id: report
-        run: |
-          SH_ERRORS=$(find . -name "*.sh" -exec shellcheck {} + 2>/dev/null | wc -l)
-          VBS_ERRORS=$(find . -name "*.vbs" -exec grep -L "Option Explicit" {} + 2>/dev/null | wc -l)
-          TOTAL=$((SH_ERRORS + VBS_ERRORS))
-          if [ "$TOTAL" -eq 0 ]; then
-            echo "body=All checks passed" >> $GITHUB_OUTPUT
-          else
-            echo "body=Code issues detected. Shell issues: $SH_ERRORS. VBScript issues: $VBS_ERRORS." >> $GITHUB_OUTPUT
-          fi
+          echo "VBSCRIPT RESULTS:" >> .github/workflows/log.txt
+          echo "-----------------" >> .github/workflows/log.txt
+          find nil -type f -name "*.vbs" -exec grep -L "Option Explicit" {} + >> .github/workflows/log.txt 2>&1 || true
+          echo "" >> .github/workflows/log.txt
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+          echo "END OF REPORT" >> .github/workflows/log.txt
+
+      - run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .github/workflows/log.txt
+          git commit -m "Update code quality report" || true
+
+      - uses: peter-evans/create-pull-request@v6
         with:
-          commit-message: Code Quality Report
-          title: Code Quality
-          body: ${{ steps.report.outputs.body }}
           branch: code-quality-report
-          base: main
-          add-paths: |
+          title: Code Quality Report
+          body: |
+            Automated code quality check.
+            See log.txt for details.
+          paths: |
             nil/**
+            .github/workflows/log.txt
