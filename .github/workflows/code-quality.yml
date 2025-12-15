@@ -3,14 +3,14 @@ name: Code Quality Sliz®
 on:
   push:
   pull_request:
-
-permissions:
-  contents: write
-  pull-requests: write
-
+  
 jobs:
   quality-check:
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      pull-requests: write
 
     steps:
       - uses: actions/checkout@v4
