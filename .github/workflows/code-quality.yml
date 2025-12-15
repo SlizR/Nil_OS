@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   quality-check:
     runs-on: ubuntu-latest
@@ -36,18 +40,15 @@ jobs:
           echo "END OF REPORT" >> .github/workflows/log.txt
 
       - run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add .github/workflows/log.txt
-          git commit -m "Update code quality report" || true
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add nil .github/workflows/log.txt
+          git diff --cached --quiet || git commit -m "Code quality report"
 
       - uses: peter-evans/create-pull-request@v6
         with:
           branch: code-quality-report
           title: Code Quality Report
           body: |
-            Automated code quality check.
-            See log.txt for details.
-          paths: |
-            nil/**
-            .github/workflows/log.txt
+            Automated code quality analysis.
