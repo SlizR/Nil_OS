@@ -37,7 +37,7 @@ jobs:
           find nil -type f -name "*.vbs" -exec grep -L "Option Explicit" {} + >> quality/log.txt 2>&1 || true
           echo "" >> quality/log.txt
 
-          echo "END OF REPORT" >> quality/log.txt
+          echo "END OF REPORT Shell$ >< VBScript$" >> quality/log.txt
 
       - run: |
           git config user.name "github-actions[bot]"
