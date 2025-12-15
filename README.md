@@ -1,8 +1,12 @@
 # Nil OS - lightweight OS | Secured by EVADE
 
 Nil OS is a lightweight, modular, and highly customizable operating system based on [**Root Core**](https://github.com/SlizR/root_core) Linux. 
-> Note! Root Core does not use a Unix-like system! It uses a custom launch system similar to Linux's Timmy Core. Nil OS uses Root Core, but with a modified structure: the underlying system is .sb modules rather than .gz (although Root Core has been modified slightly to accommodate the .img > initrfs.img system).
-It is designed for minimal resource usage, fast boot times, and maximum user control over both the runtime environment and the persistent storage model.
+> **Note! Root Core does not use a Unix-like system! It uses a custom launch system similar to Linux's Timmy Core. Nil OS uses Root Core, but with a modified structure: the underlying system is .sb modules rather than .gz (although Root Core has been modified slightly to accommodate the .img > initrfs.img system).
+It is designed for minimal resource usage, fast boot times, and maximum user control over both the runtime environment and the persistent storage model.**
+
+> **WARNING!**
+
+> All previous versions before 6.6 are not working, there are updates, but version 6.4 has a different architecture and does not have a GUI/UI, version 6.5 was not tested and it turned out to be a problem with the kernel and screen, and after version 6.5, 6.6 was also not working, after correction it is working**
 
 Nil OS provides an extensible architecture suitable for embedded systems, experimental Linux environments, custom live distributions, and minimalistic desktop setups.
 
