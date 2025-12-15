@@ -1,0 +1,124 @@
+CODE QUALITY REPORT
+===================
+
+SHELLCHECK (.sh)
+----------------
+
+In nil/boot/bootinst.sh line 66:
+   if [ "$1" != "--rex" -a "$2" != "--rex" ]; then
+                        ^-- SC2166 (warning): Prefer [ p ] && [ q ] as [ p -a q ] is not well defined.
+
+
+In nil/boot/bootinst.sh line 67:
+      konsole --nofork -e /bin/sh $0 --rex 2>/dev/null || xterm -e /bin/sh $0 --rex 2>/dev/null || /bin/sh $0 --rex 2>/dev/null
+                                  ^-- SC2086 (info): Double quote to prevent globbing and word splitting.
+                                                                           ^-- SC2086 (info): Double quote to prevent globbing and word splitting.
+                                                                                                           ^-- SC2086 (info): Double quote to prevent globbing and word splitting.
+
+Did you mean: 
+      konsole --nofork -e /bin/sh "$0" --rex 2>/dev/null || xterm -e /bin/sh "$0" --rex 2>/dev/null || /bin/sh "$0" --rex 2>/dev/null
+
+
+In nil/boot/bootinst.sh line 73:
+if [ "$UID" != "0" -a "$UID" != "" ]; then
+      ^--^ SC3028 (warning): In POSIX sh, UID is undefined.
+                   ^-- SC2166 (warning): Prefer [ p ] && [ q ] as [ p -a q ] is not well defined.
+                       ^--^ SC3028 (warning): In POSIX sh, UID is undefined.
+
+
+In nil/boot/bootinst.sh line 78:
+   read junk
+   ^--^ SC2162 (info): read without -r will mangle backslashes.
+
+
+In nil/boot/bootinst.sh line 85:
+BOOT="$(realpath "$BOOT" 2>/dev/null || echo $BOOT)"
+                                             ^---^ SC2086 (info): Double quote to prevent globbing and word splitting.
+
+Did you mean: 
+BOOT="$(realpath "$BOOT" 2>/dev/null || echo "$BOOT")"
+
+
+In nil/boot/bootinst.sh line 86:
+cd "$BOOT"
+^--------^ SC2164 (warning): Use 'cd ... || exit' or 'cd ... || return' in case cd fails.
+
+Did you mean: 
+cd "$BOOT" || exit
+
+
+In nil/boot/bootinst.sh line 93:
+if [ "$(fdisk -l "$DEV" | fgrep "$DEV" | fgrep "*")" != "" ]; then
+                          ^---^ SC2197 (info): fgrep is non-standard and deprecated. Use grep -F instead.
+                                         ^---^ SC2197 (info): fgrep is non-standard and deprecated. Use grep -F instead.
+
+
+In nil/boot/bootinst.sh line 99:
+   read junk
+   ^--^ SC2162 (info): read without -r will mangle backslashes.
+
+
+In nil/boot/bootinst.sh line 110:
+   mount -o remount,exec $DEV
+                         ^--^ SC2086 (info): Double quote to prevent globbing and word splitting.
+
+Did you mean: 
+   mount -o remount,exec "$DEV"
+
+
+In nil/boot/bootinst.sh line 127:
+if [ $? -ne 0 ]; then
+     ^-- SC2181 (style): Check exit code directly with e.g. 'if ! mycmd;', not indirectly with $?.
+
+
+In nil/boot/bootinst.sh line 130:
+   read junk
+   ^--^ SC2162 (info): read without -r will mangle backslashes.
+
+
+In nil/boot/bootinst.sh line 143:
+      fdisk -l "$DEV" | fgrep "*" | fgrep "$DEV" | cut -d " " -f 1 \
+                        ^---^ SC2197 (info): fgrep is non-standard and deprecated. Use grep -F instead.
+                                    ^---^ SC2197 (info): fgrep is non-standard and deprecated. Use grep -F instead.
+
+
+In nil/boot/bootinst.sh line 146:
+      echo $PART
+           ^---^ SC2086 (info): Double quote to prevent globbing and word splitting.
+
+Did you mean: 
+      echo "$PART"
+
+
+In nil/boot/bootinst.sh line 148:
+   ) | fdisk $DEV >/dev/null 2>&1
+             ^--^ SC2086 (info): Double quote to prevent globbing and word splitting.
+
+Did you mean: 
+   ) | fdisk "$DEV" >/dev/null 2>&1
+
+
+In nil/boot/bootinst.sh line 157:
+read junk
+^--^ SC2162 (info): read without -r will mangle backslashes.
+     ^--^ SC2034 (warning): junk appears unused. Verify use (or export if used externally).
+
+
+In nil/boot/bootinst.sh line 158:
+cd "$CWD"
+^-------^ SC2164 (warning): Use 'cd ... || exit' or 'cd ... || return' in case cd fails.
+
+Did you mean: 
+cd "$CWD" || exit
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2034 -- junk appears unused. Verify use (...
+  https://www.shellcheck.net/wiki/SC2164 -- Use 'cd ... || exit' or 'cd ... |...
+  https://www.shellcheck.net/wiki/SC2166 -- Prefer [ p ] && [ q ] as [ p -a q...
+
+VBSCRIPT (.vbs)
+---------------
+nil/boot/samedisk.vbs
+nil/boot/runadmin.vbs
+
+END OF REPORT Shell$ >< VBScript$
