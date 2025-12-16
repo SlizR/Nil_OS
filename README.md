@@ -6,7 +6,7 @@ It is designed for minimal resource usage, fast boot times, and maximum user con
 
 > **WARNING!**
 
-> All previous versions before 6.6 are not working, there are updates, but version 6.4 has a different architecture and does not have a GUI/UI, version 6.5 was not tested and it turned out to be a problem with the kernel and screen, and after version 6.5, 6.6 was also not working, after correction it is working**
+> All previous versions before 6.6 are not working, there are updates, but version 6.4 has a different architecture and does not have a GUI/UI, version 6.5 was not tested and it turned out to be a problem with the kernel and screen, and after version 6.5, 6.6 was also not working, after correction it is working
 
 Nil OS provides an extensible architecture suitable for embedded systems, experimental Linux environments, custom live distributions, and minimalistic desktop setups.
 
@@ -29,7 +29,7 @@ Nil OS provides an extensible architecture suitable for embedded systems, experi
 # All OS status
 | OS Name (code name) | Version | UI/GUI | Is it supported? | OTA | Released? | Status | Development | Accepts OTA updates? |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 6.4 | v6.4 | UI | No | Didn't have | Yes | Not working | 100% | Doesn't work |
+| 6.4 | v6.4 | Didn't have | No | Didn't have | Yes | Not working | 100% | Doesn't work |
 | 6.5 | v6.5 | UI | No | Have | Yes | Not working | 100% | Doesn't work |
 | 6.6 | v6.6 | UI & GUI | Yes | Have | Yes | Stable | 100% | Yes |
 | shore | v6.7 | UI & GUI | - | - | No | Development... | 20% | Yes |
@@ -45,7 +45,7 @@ Nil OS provides an extensible architecture suitable for embedded systems, experi
 
 ### Custom Boot Experience
 
-* Integrated animated ASCII boot screen.
+* Integrated ASCII boot screen.
 * User hostname/name overlay.
 * Terminal: name>>> (For user) or $> (For root)
 * Millisecond‑accurate boot time display.
