@@ -26,6 +26,14 @@ Nil OS provides an extensible architecture suitable for embedded systems, experi
 - **E**xternal **V**ault **A**ccess **D**efense **E**ngine - **EVADE**
 
 ---
+# All OS status
+| OS Name (code name) | Version | UI/GUI | Is it supported? | Released? | Status | Development |
+|:---|:---:|:---:|:---:|:---:|:---:|:---|
+| 6.4 | v6.4 | UI | Yes | No | Not working | 100% |
+| 6.5 | v6.5 | UI | Yes | No | Not working | 100% |
+| 6.6 | v6.6 | UI & GUI | Yes | Yes | Stable | 100% |
+| shore | v6.7 | UI & GUI | - | No | Development... | 20% |
+---
 
 ## Features
 
