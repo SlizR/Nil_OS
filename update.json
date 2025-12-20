@@ -1,8 +1,8 @@
 {
   "latest": {
     "version": "6.6",
-    "url": "https://github.com/SlizR/Nil_OS/releases/download/v6.6/Nil_OS_v6.6.iso"
-    "code": "6.6"
-    "OTA": "A complete redesign of the operating system, changes to functions and commands, and changes to the OS kernel extension and structure (Root Core > https://github.com/SlizR/root_core) and also the final fix for the OS loading bugs, now it's tested and working.",
+    "url": "https://github.com/SlizR/Nil_OS/releases/download/v6.6/Nil_OS_v6.6.iso",
+    "code": "6.6",
+    "OTA": "A complete redesign of the operating system, changes to functions and commands, and changes to the OS kernel extension and structure (Root Core > https://github.com/SlizR/root_core) and also the final fix for the OS loading bugs, now it's tested and working."
   }
 }
