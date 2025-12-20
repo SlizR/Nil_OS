@@ -27,12 +27,12 @@ Nil OS provides an extensible architecture suitable for embedded systems, experi
 
 ---
 # All OS status
-| OS Name (code name) | Version | UI/GUI | Is it supported? | OTA | Released? | Status | Development | Accepts OTA updates? |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 6.4 | v6.4 | Didn't have | No | Didn't have | Yes | Not working | 100% | Doesn't work |
-| 6.5 | v6.5 | UI | No | Have | Yes | Not working | 100% | Doesn't work |
-| 6.6 | v6.6 | UI & GUI | Yes | Have | Yes | Stable | 100% | Yes |
-| shore | v6.7 | UI & GUI | - | - | No | Development... | 20% | Yes |
+| OS Name (code name) | Version | UI/GUI | Is it supported? | OTA | Released? | Status | Development |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 6.4 | v6.4 | Didn't have | No | Didn't have | Yes | Not working | 100% |
+| 6.5 | v6.5 | UI | No | Have | Yes | Not working | 100% |
+| 6.6 | v6.6 | UI & GUI | Yes | Have | Yes | Stable | 100% |
+| shore | v6.7 | UI & GUI | - | - | No | Development... | 20% |
 ---
 
 ## Features
