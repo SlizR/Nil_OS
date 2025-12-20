@@ -1,0 +1,31 @@
+Nil OS Security & Isolation Statement:
+
+Product Branding and Security Assurance
+
+Product Name: Nil OS
+Developed by: Sliz
+Security Partner: EVADE Security Service
+
+Nil OS is engineered for maximal performance on minimal hardware while maintaining strong guarantees of data integrity and user privacy. The security model of Nil OS is defined by the following principles and mechanisms.
+
+Secured by EVADE (EVADE Security)
+
+The designation “Secured by EVADE” represents a continuous and active security commitment to the Nil OS platform. This commitment includes ongoing maintenance and defensive oversight throughout the system’s lifecycle.
+
+Key components of this assurance include continuous auditing, meaning regular security inspections and vulnerability assessments of core operating system components, as well as guaranteed security updates, ensuring that all official Nil OS releases include integrated security patches that protect against known and emerging threats.
+
+Live System Data Isolation and Private Territory
+
+A foundational capability of Nil OS, implemented in cooperation with the EVADE Security Service, is strict isolation between the live operating system environment and the host computer’s internal storage.
+
+Core isolation principle:
+
+When Nil OS is executed as a live system from a removable storage device, such as a USB flash drive, all user activity—including configuration changes, user files, and system modifications—is written exclusively to that removable device.
+
+At no point are changes written to the host computer’s internal hard drive or operating system unless explicitly authorized by the user.
+
+Resulting guarantee:
+
+A user can insert a flash drive containing Nil OS into a computer, operate the system, make changes, and store data, with the certainty that all data remains on the flash drive and that no files, logs, or system changes are saved to the host machine.
+
+This behavior establishes a self-contained “Private Territory” on the removable drive, preserving user privacy, preventing data leakage, and protecting the integrity of the host system regardless of where Nil OS is used.
